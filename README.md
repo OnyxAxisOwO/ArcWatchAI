@@ -36,6 +36,6 @@ iPhone 管理服务商和密钥，两端各自使用 Keychain 保存密钥。历
 
 ## 构建
 
-直接打开 `ArcWatchAI.xcodeproj`。在两个 target 的 Signing & Capabilities 中选择自己的开发团队，选择配对的 iPhone 和 Apple Watch，运行 `ArcWatchAI`。单独运行手表使用 `ArcWatch` scheme。真机用的 Base URL 应能从手表访问。
+直接打开 `ArcWatchAI.xcodeproj`。在两个 target 的 Signing & Capabilities 中选择自己的开发团队，选择配对的 iPhone 和 Apple Watch，运行 `ArcWatchAI`。单独运行手表使用 `ArcWatch` scheme。在模拟器上也请保留 Xcode 的默认签名，Keychain 通过签名中的应用标识保存服务商密钥。真机用的 Base URL 应能从手表访问。
 
 仓库包含可直接打开的 Xcode 工程。如需从 `project.yml` 重新生成，可运行 `xcodegen generate`。在 macOS 运行 `swift test -j 1` 可验证服务商请求、响应解析和历史合并。

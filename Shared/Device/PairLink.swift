@@ -19,10 +19,17 @@ final class PairLink: NSObject, WCSessionDelegate {
         guard let session, session.activationState == .activated else { return }
         #if os(iOS)
         guard session.isPaired && session.isWatchAppInstalled else { return }
+        #elseif os(watchOS)
+        guard session.isCompanionAppInstalled else { return }
         #endif
         var currentFile: URL?
         if data.count < 55_000 {
-            try session.updateApplicationContext(["snapshot": data])
+            do {
+                try session.updateApplicationContext(["snapshot": data])
+            } catch let error as WCError where error.code == .companionAppNotInstalled || error.code == .watchAppNotInstalled {
+                // Installation can change after the check. The install callback resends current persisted state.
+                return
+            }
             if session.isReachable { session.sendMessageData(data, replyHandler: nil) { _ in } }
         } else {
             // Application context has a size limit. Files also reach a sleeping counterpart.
@@ -73,5 +80,9 @@ final class PairLink: NSObject, WCSessionDelegate {
     func sessionWatchStateDidChange(_ session: WCSession) { refresh() }
     func sessionDidBecomeInactive(_ session: WCSession) {}
     func sessionDidDeactivate(_ session: WCSession) { session.activate() }
+    #elseif os(watchOS)
+    func sessionCompanionAppInstalledDidChange(_ session: WCSession) {
+        if session.isCompanionAppInstalled { refresh() }
+    }
     #endif
 }
