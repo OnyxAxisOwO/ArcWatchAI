@@ -31,6 +31,7 @@ struct WatchChatView: View {
                 .frame(maxWidth: 168)
                 .padding(.horizontal, 7)
                 .padding(.top, 5)
+                .zIndex(1)
             if store.messages.isEmpty { emptyChat } else { transcript }
             composer
         }
@@ -170,6 +171,8 @@ struct WatchChatView: View {
                 }
             }
         }
+        .clipped()
+        .contentShape(Rectangle())
     }
 
     private var composer: some View {
