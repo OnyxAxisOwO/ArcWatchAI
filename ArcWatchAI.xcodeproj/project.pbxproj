@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		027AA87E7418F6AEC394CC8F /* Brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683F7DC66DF855BC5AEA3FA2 /* Brand.xcassets */; };
+		06A1643CF9F3F104E6CF10DD /* AIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBE6105F7EAA76C59ADF92 /* AIClient.swift */; };
+		09937746410FF38033E0AA18 /* PhoneSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0E9D798E143B7EB19D04F1 /* PhoneSettings.swift */; };
+		0CD79AFA4CB143F8F871DF68 /* MarkdownMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAF659E1E8B2F8E4474B27 /* MarkdownMessage.swift */; };
+		2B7B93B3D162C0C4ED5268C1 /* CredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67E2B51EFD45C472A976E /* CredentialStore.swift */; };
+		43D04B5782B8C9B21D3E3464 /* Brand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 683F7DC66DF855BC5AEA3FA2 /* Brand.xcassets */; };
+		48DA44DC901DFED245FA8FA7 /* PairLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B1228CBCC19AE78EF9299 /* PairLink.swift */; };
+		5C985E996F3E8847F30083F7 /* CredentialStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF67E2B51EFD45C472A976E /* CredentialStore.swift */; };
+		615D1C3FB703D3E73D3A2A68 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62C28199B7AC73D8DFCA414 /* ChatStore.swift */; };
+		666FD3F26314B64FCD8BCC0B /* ArcWatchPhoneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF89011CD702E0C2C4D334F /* ArcWatchPhoneApp.swift */; };
+		684F855C55FE53A9F5DE7590 /* MarkdownMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AAF659E1E8B2F8E4474B27 /* MarkdownMessage.swift */; };
+		6D67DD56D12E8D1F7C9101C5 /* PairLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14B1228CBCC19AE78EF9299 /* PairLink.swift */; };
+		6EF74B1570E60842BDCCBD33 /* PhoneChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91D5D2A21E6DFF851623121 /* PhoneChat.swift */; };
+		7B0ECD08E716ED708B02FE41 /* ArcWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272AA645763E63A06514817F /* ArcWatchApp.swift */; };
+		825988A74393C04FF23268DE /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54DB3FC1B077CE3C007CA3 /* Models.swift */; };
+		85D443DFF73F1651917DE5E7 /* ArcWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E61A47F81A65833B074C6881 /* ArcWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9D61D2D0F63BCB2F3F4B576A /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A913739A046FBE32C0F54 /* Appearance.swift */; };
+		A0B15E71E2F25B048AF24E0C /* WatchPanels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CAEDCE3044F1134EA619511 /* WatchPanels.swift */; };
+		AE2B8E09F181FF6F155EC5C7 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807A913739A046FBE32C0F54 /* Appearance.swift */; };
+		C1C23BE90C3A080B9D2E47FB /* AIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBE6105F7EAA76C59ADF92 /* AIClient.swift */; };
+		C252E0216787642903F8005B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D54DB3FC1B077CE3C007CA3 /* Models.swift */; };
+		CA72B6D30B3EAA4ECFA008B1 /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62C28199B7AC73D8DFCA414 /* ChatStore.swift */; };
+		F585EE629ECB379AE551D6EF /* PhoneProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0DAA2C1C379361ED63ACD97 /* PhoneProviders.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0DD9B13DCDE988CD79AC9374 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F814FEE7A6B2E788829ACB4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 010B6F693FC6B5B9FCCD62EB;
+			remoteInfo = ArcWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EA32247EE3C16CA587184F55 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				85D443DFF73F1651917DE5E7 /* ArcWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		272AA645763E63A06514817F /* ArcWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcWatchApp.swift; sourceTree = "<group>"; };
+		30C956847F9789FDC7CC40AC /* ArcWatchAI.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = ArcWatchAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CAEDCE3044F1134EA619511 /* WatchPanels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchPanels.swift; sourceTree = "<group>"; };
+		4D54DB3FC1B077CE3C007CA3 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5DF67E2B51EFD45C472A976E /* CredentialStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialStore.swift; sourceTree = "<group>"; };
+		5EF89011CD702E0C2C4D334F /* ArcWatchPhoneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcWatchPhoneApp.swift; sourceTree = "<group>"; };
+		683F7DC66DF855BC5AEA3FA2 /* Brand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Brand.xcassets; sourceTree = "<group>"; };
+		68AAF659E1E8B2F8E4474B27 /* MarkdownMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownMessage.swift; sourceTree = "<group>"; };
+		807A913739A046FBE32C0F54 /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
+		A0DAA2C1C379361ED63ACD97 /* PhoneProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneProviders.swift; sourceTree = "<group>"; };
+		B91D5D2A21E6DFF851623121 /* PhoneChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneChat.swift; sourceTree = "<group>"; };
+		C14B1228CBCC19AE78EF9299 /* PairLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairLink.swift; sourceTree = "<group>"; };
+		CC0E9D798E143B7EB19D04F1 /* PhoneSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSettings.swift; sourceTree = "<group>"; };
+		D62C28199B7AC73D8DFCA414 /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		E61A47F81A65833B074C6881 /* ArcWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArcWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCEBE6105F7EAA76C59ADF92 /* AIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		03CED989FB40030658CB95BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E61A47F81A65833B074C6881 /* ArcWatch.app */,
+				30C956847F9789FDC7CC40AC /* ArcWatchAI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		372DB9F140E376244C53972E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FCEBE6105F7EAA76C59ADF92 /* AIClient.swift */,
+				4D54DB3FC1B077CE3C007CA3 /* Models.swift */,
+				6E6721B22DADF85A0EA29474 /* Device */,
+				BFEB7950EB25A5D198C25926 /* Interface */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		3850451C88B45CB75E8B5CFA /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				272AA645763E63A06514817F /* ArcWatchApp.swift */,
+				3CAEDCE3044F1134EA619511 /* WatchPanels.swift */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		6E6721B22DADF85A0EA29474 /* Device */ = {
+			isa = PBXGroup;
+			children = (
+				D62C28199B7AC73D8DFCA414 /* ChatStore.swift */,
+				5DF67E2B51EFD45C472A976E /* CredentialStore.swift */,
+				C14B1228CBCC19AE78EF9299 /* PairLink.swift */,
+			);
+			path = Device;
+			sourceTree = "<group>";
+		};
+		76E23A776FD1227EDA9B753D /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+				5EF89011CD702E0C2C4D334F /* ArcWatchPhoneApp.swift */,
+				B91D5D2A21E6DFF851623121 /* PhoneChat.swift */,
+				A0DAA2C1C379361ED63ACD97 /* PhoneProviders.swift */,
+				CC0E9D798E143B7EB19D04F1 /* PhoneSettings.swift */,
+			);
+			path = Phone;
+			sourceTree = "<group>";
+		};
+		92552AB3733850D3499EF21E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				683F7DC66DF855BC5AEA3FA2 /* Brand.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		94C32955B8AF42520435EBE6 = {
+			isa = PBXGroup;
+			children = (
+				76E23A776FD1227EDA9B753D /* Phone */,
+				92552AB3733850D3499EF21E /* Resources */,
+				372DB9F140E376244C53972E /* Shared */,
+				3850451C88B45CB75E8B5CFA /* Watch */,
+				03CED989FB40030658CB95BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFEB7950EB25A5D198C25926 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				807A913739A046FBE32C0F54 /* Appearance.swift */,
+				68AAF659E1E8B2F8E4474B27 /* MarkdownMessage.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		010B6F693FC6B5B9FCCD62EB /* ArcWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76C21D42F6B06FD06C8F0B42 /* Build configuration list for PBXNativeTarget "ArcWatch" */;
+			buildPhases = (
+				6656040C1303899666B55F13 /* Sources */,
+				C3E64820A9B684D1EC223152 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArcWatch;
+			packageProductDependencies = (
+			);
+			productName = ArcWatch;
+			productReference = E61A47F81A65833B074C6881 /* ArcWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3F30C81B69D13AA430A0E86D /* ArcWatchAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F8B68F8831E3878772995B9 /* Build configuration list for PBXNativeTarget "ArcWatchAI" */;
+			buildPhases = (
+				DC72AE231232E44DB3C68228 /* Sources */,
+				EE2FC7C912B7B37EF119265E /* Resources */,
+				EA32247EE3C16CA587184F55 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F501EB02B587CAB6848BAFE6 /* PBXTargetDependency */,
+			);
+			name = ArcWatchAI;
+			packageProductDependencies = (
+			);
+			productName = ArcWatchAI;
+			productReference = 30C956847F9789FDC7CC40AC /* ArcWatchAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F814FEE7A6B2E788829ACB4C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					010B6F693FC6B5B9FCCD62EB = {
+						ProvisioningStyle = Automatic;
+					};
+					3F30C81B69D13AA430A0E86D = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 169D864FE4E63A5055703957 /* Build configuration list for PBXProject "ArcWatchAI" */;
+			developmentRegion = "zh-Hans";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 94C32955B8AF42520435EBE6;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 03CED989FB40030658CB95BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F30C81B69D13AA430A0E86D /* ArcWatchAI */,
+				010B6F693FC6B5B9FCCD62EB /* ArcWatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C3E64820A9B684D1EC223152 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				43D04B5782B8C9B21D3E3464 /* Brand.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE2FC7C912B7B37EF119265E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				027AA87E7418F6AEC394CC8F /* Brand.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6656040C1303899666B55F13 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C23BE90C3A080B9D2E47FB /* AIClient.swift in Sources */,
+				9D61D2D0F63BCB2F3F4B576A /* Appearance.swift in Sources */,
+				7B0ECD08E716ED708B02FE41 /* ArcWatchApp.swift in Sources */,
+				CA72B6D30B3EAA4ECFA008B1 /* ChatStore.swift in Sources */,
+				5C985E996F3E8847F30083F7 /* CredentialStore.swift in Sources */,
+				0CD79AFA4CB143F8F871DF68 /* MarkdownMessage.swift in Sources */,
+				825988A74393C04FF23268DE /* Models.swift in Sources */,
+				6D67DD56D12E8D1F7C9101C5 /* PairLink.swift in Sources */,
+				A0B15E71E2F25B048AF24E0C /* WatchPanels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC72AE231232E44DB3C68228 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06A1643CF9F3F104E6CF10DD /* AIClient.swift in Sources */,
+				AE2B8E09F181FF6F155EC5C7 /* Appearance.swift in Sources */,
+				666FD3F26314B64FCD8BCC0B /* ArcWatchPhoneApp.swift in Sources */,
+				615D1C3FB703D3E73D3A2A68 /* ChatStore.swift in Sources */,
+				2B7B93B3D162C0C4ED5268C1 /* CredentialStore.swift in Sources */,
+				684F855C55FE53A9F5DE7590 /* MarkdownMessage.swift in Sources */,
+				C252E0216787642903F8005B /* Models.swift in Sources */,
+				48DA44DC901DFED245FA8FA7 /* PairLink.swift in Sources */,
+				6EF74B1570E60842BDCCBD33 /* PhoneChat.swift in Sources */,
+				F585EE629ECB379AE551D6EF /* PhoneProviders.swift in Sources */,
+				09937746410FF38033E0AA18 /* PhoneSettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F501EB02B587CAB6848BAFE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 010B6F693FC6B5B9FCCD62EB /* ArcWatch */;
+			targetProxy = 0DD9B13DCDE988CD79AC9374 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		06C49B8D9506B90A40CC3887 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Config/ArcWatchAI.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.onyxaxis.ArcWatchAI;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		258AF1038915CCFFB57299BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
+		8D8EE81CEC5028A49264BAED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Config/ArcWatch.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = app.onyxaxis.ArcWatchAI.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Release;
+		};
+		9B82225750698A4C79CAC0A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Config/ArcWatch.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = app.onyxaxis.ArcWatchAI.watchkitapp;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		ADBCE42E2CE1DDF8B6C4837D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		C1413BD4BF52B276AD37C87D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Config/ArcWatchAI.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.onyxaxis.ArcWatchAI;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		169D864FE4E63A5055703957 /* Build configuration list for PBXProject "ArcWatchAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADBCE42E2CE1DDF8B6C4837D /* Debug */,
+				258AF1038915CCFFB57299BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4F8B68F8831E3878772995B9 /* Build configuration list for PBXNativeTarget "ArcWatchAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06C49B8D9506B90A40CC3887 /* Debug */,
+				C1413BD4BF52B276AD37C87D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		76C21D42F6B06FD06C8F0B42 /* Build configuration list for PBXNativeTarget "ArcWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B82225750698A4C79CAC0A9 /* Debug */,
+				8D8EE81CEC5028A49264BAED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F814FEE7A6B2E788829ACB4C /* Project object */;
+}
