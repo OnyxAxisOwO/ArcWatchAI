@@ -67,6 +67,14 @@ struct WatchChatView: View {
         HStack(spacing: 6) {
             barButton("历史对话", symbol: "clock.arrow.circlepath") { panel = .history }
                 .frame(width: 34)
+                .background {
+                    if #available(watchOS 26, *) {
+                        Color.clear.frame(width: 26, height: 26)
+                            .glassEffect(.regular.interactive(), in: .circle)
+                    } else {
+                        Circle().fill(.regularMaterial).frame(width: 26, height: 26)
+                    }
+                }
 
             HStack(spacing: 0) {
                 barButton("联网搜索", symbol: "globe", selected: store.searchEnabled) { store.searchEnabled.toggle() }
