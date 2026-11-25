@@ -25,11 +25,6 @@ extension ChatStore {
         return Color(red: rgb.red, green: rgb.green, blue: rgb.blue)
     }
 
-    var watchAccentInk: Color {
-        let rgb = watchAccentRGB
-        return watchLuminance(red: rgb.red, green: rgb.green, blue: rgb.blue) > 0.179 ? .black : .white
-    }
-
     private func watchLuminance(red: Double, green: Double, blue: Double) -> Double {
         func linear(_ value: Double) -> Double {
             value <= 0.04045 ? value / 12.92 : pow((value + 0.055) / 1.055, 2.4)
@@ -125,29 +120,6 @@ struct WatchHistory: View {
         } message: { conversation in
             Text(conversation.title)
         }
-    }
-}
-
-struct WatchTools: View {
-    @EnvironmentObject private var store: ChatStore
-
-    var body: some View {
-        List {
-            Toggle(isOn: $store.searchEnabled) {
-                Label("联网搜索", systemImage: "globe")
-            }
-            Toggle(isOn: $store.thinkingEnabled) {
-                Label("思考", systemImage: "lightbulb")
-            }
-            NavigationLink {
-                WatchSettings()
-            } label: {
-                Label("设置", systemImage: "gearshape")
-            }
-        }
-        .scrollContentBackground(.hidden)
-        .watchCanvas(store)
-        .navigationTitle("对话工具")
     }
 }
 

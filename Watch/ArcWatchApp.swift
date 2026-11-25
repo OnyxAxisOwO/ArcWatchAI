@@ -15,7 +15,7 @@ struct ArcWatchApp: App {
 }
 
 enum WatchPanel: String, Identifiable {
-    case history, tools, settings, models
+    case history, settings, models
     var id: Self { self }
 }
 
@@ -26,19 +26,18 @@ struct WatchChatView: View {
     @State private var draft = ""
 
     var body: some View {
-        GeometryReader { geometry in
-            let compactControls = geometry.size.width < 153
-            VStack(spacing: 0) {
-                toolbar(compact: compactControls)
-                if store.messages.isEmpty {
-                    emptyChat
-                } else {
-                    transcript
-                }
-                composer
-            }
-            .padding(.horizontal, 5)
+        VStack(spacing: 0) {
+            actionBar
+                .frame(maxWidth: 168)
+                .padding(.horizontal, 7)
+                .padding(.top, 5)
+            if store.messages.isEmpty { emptyChat } else { transcript }
+            composer
         }
+        .padding(.horizontal, 5)
+        .ignoresSafeArea(.container, edges: .top)
+        // watchOS exposes the clock preference through this underscored SwiftUI modifier.
+        ._statusBarHidden(panel == nil)
         .watchCanvas(store)
         .sheet(item: $panel) { destination in
             NavigationStack {
@@ -48,7 +47,6 @@ struct WatchChatView: View {
                         draft = ""
                         panel = nil
                     }
-                case .tools: WatchTools()
                 case .settings: WatchSettings()
                 case .models: WatchModels()
                 }
@@ -65,29 +63,31 @@ struct WatchChatView: View {
         }
     }
 
-    private func toolbar(compact: Bool) -> some View {
+    private var actionBar: some View {
         HStack(spacing: 0) {
-            WatchToolButton(symbol: "clock.arrow.circlepath", title: "历史对话") {
-                panel = .history
-            }
-            Spacer(minLength: 0)
-            if compact {
-                WatchToolButton(symbol: "slider.horizontal.3", title: "对话工具",
-                                selected: store.searchEnabled || store.thinkingEnabled) {
-                    panel = .tools
-                }
-            } else {
-                WatchToolButton(symbol: "globe", title: "联网搜索", selected: store.searchEnabled) {
-                    store.searchEnabled.toggle()
-                }
-                WatchToolButton(symbol: "lightbulb", title: "思考", selected: store.thinkingEnabled) {
-                    store.thinkingEnabled.toggle()
-                }
-                WatchToolButton(symbol: "gearshape", title: "设置") {
-                    panel = .settings
-                }
-            }
+            barButton("历史对话", symbol: "clock.arrow.circlepath") { panel = .history }
+            barButton("联网搜索", symbol: "globe", selected: store.searchEnabled) { store.searchEnabled.toggle() }
+            barButton("思考", symbol: "lightbulb", selected: store.thinkingEnabled) { store.thinkingEnabled.toggle() }
+            barButton("设置", symbol: "gearshape") { panel = .settings }
         }
+        .padding(.horizontal, 3)
+        .background {
+            Color.clear.frame(height: 26).watchBarSurface()
+        }
+    }
+
+    private func barButton(_ title: String, symbol: String, selected: Bool? = nil, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            Image(systemName: symbol)
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundStyle(selected == true ? store.watchAccent : .primary)
+                .frame(maxWidth: .infinity, minHeight: 34)
+                .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(title)
+        .accessibilityValue(selected.map { $0 ? "已开启" : "已关闭" } ?? "")
+        .accessibilityAddTraits(selected == true ? .isSelected : [])
     }
 
     private var emptyChat: some View {
@@ -182,14 +182,12 @@ struct WatchChatView: View {
                 }
             } label: {
                 Image(systemName: store.isSending ? "stop.fill" : "arrow.up")
-                    .font(.system(size: store.isSending ? 13 : 17, weight: .bold))
-                    .foregroundStyle(store.watchAccentInk)
-                    .frame(width: 32, height: 32)
-                    .background(store.watchAccent, in: Circle())
-                    .frame(width: 38, height: 40)
-                    .contentShape(Rectangle())
+                    .font(.system(size: store.isSending ? 11 : 14, weight: .bold))
+                    .frame(width: 14, height: 14)
             }
-            .buttonStyle(.plain)
+            .watchSendStyle()
+            .tint(store.watchAccent)
+            .frame(width: 38, height: 40)
             .disabled(!store.isSending && draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             .accessibilityLabel(store.isSending ? "停止回复" : "发送消息")
         }
@@ -222,27 +220,17 @@ private struct WatchMessage: View {
     }
 }
 
-private struct WatchToolButton: View {
-    @EnvironmentObject private var store: ChatStore
-    let symbol: String
-    let title: String
-    var selected: Bool?
-    let action: () -> Void
+private extension View {
+    @ViewBuilder
+    func watchBarSurface() -> some View {
+        if #available(watchOS 26, *) { glassEffect(.regular.interactive(), in: .capsule) }
+        else { background(.regularMaterial, in: Capsule()) }
+    }
 
-    var body: some View {
-        Button(action: action) {
-            Image(systemName: symbol)
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(selected == true ? store.watchAccent : Color.primary)
-                .frame(width: 26, height: 26)
-                .background(selected == true ? store.watchAccent.opacity(0.22) : Color.primary.opacity(0.09),
-                            in: Circle())
-                .frame(width: 35, height: 35)
-                .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-        .accessibilityLabel(title)
-        .accessibilityValue(selected.map { $0 ? "已开启" : "已关闭" } ?? "")
-        .accessibilityAddTraits(selected == true ? .isSelected : [])
+    @ViewBuilder
+    func watchSendStyle() -> some View {
+        let button = self.buttonBorderShape(.circle).controlSize(.mini)
+        if #available(watchOS 26, *) { button.buttonStyle(.glassProminent) }
+        else { button.buttonStyle(.borderedProminent) }
     }
 }
