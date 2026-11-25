@@ -161,13 +161,27 @@ struct WatchChatView: View {
     }
 
     private var composer: some View {
-        HStack(spacing: 3) {
-            TextField("输入消息", text: $draft)
+        let canSend = !draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        return HStack(spacing: 0) {
+            Text(verbatim: draft.isEmpty ? "输入消息" : draft)
                 .font(.footnote)
-                .textFieldStyle(.plain)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .clipShape(Capsule())
-                .accessibilityLabel("输入消息")
+                .foregroundStyle(draft.isEmpty ? .secondary : .primary)
+                .lineLimit(1)
+                .padding(.leading, 12)
+                .frame(maxWidth: .infinity, minHeight: 32, alignment: .leading)
+                .accessibilityHidden(true)
+                .overlay {
+                    // Keep the bound system editor and its draft, while the shared bar draws the field.
+                    TextField("输入消息", text: $draft)
+                        .textFieldStyle(.plain)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .overlay {
+                            Rectangle().blendMode(.destinationOut).allowsHitTesting(false)
+                        }
+                        .compositingGroup()
+                        .contentShape(Rectangle())
+                        .accessibilityLabel("输入消息")
+                }
             Button {
                 if store.isSending {
                     store.cancel()
@@ -183,16 +197,17 @@ struct WatchChatView: View {
             } label: {
                 Image(systemName: store.isSending ? "stop.fill" : "arrow.up")
                     .font(.system(size: store.isSending ? 11 : 14, weight: .bold))
-                    .frame(width: 14, height: 14)
+                    .foregroundStyle(store.isSending || canSend ? store.watchAccent : Color.secondary)
+                    .frame(width: 34, height: 32)
+                    .contentShape(Rectangle())
             }
-            .watchSendStyle()
-            .tint(store.watchAccent)
-            .frame(width: 38, height: 40)
-            .disabled(!store.isSending && draft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            .disabled(!store.isSending && !canSend)
             .accessibilityLabel(store.isSending ? "停止回复" : "发送消息")
         }
+        .buttonStyle(.plain)
+        .frame(height: 32)
+        .background { Color.clear.frame(height: 28).watchBarSurface() }
         .padding(.horizontal, 3)
-        .padding(.top, 2)
     }
 }
 
@@ -225,12 +240,5 @@ private extension View {
     func watchBarSurface() -> some View {
         if #available(watchOS 26, *) { glassEffect(.regular.interactive(), in: .capsule) }
         else { background(.regularMaterial, in: Capsule()) }
-    }
-
-    @ViewBuilder
-    func watchSendStyle() -> some View {
-        let button = self.buttonBorderShape(.circle).controlSize(.mini)
-        if #available(watchOS 26, *) { button.buttonStyle(.glassProminent) }
-        else { button.buttonStyle(.borderedProminent) }
     }
 }

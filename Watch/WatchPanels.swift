@@ -59,9 +59,15 @@ struct WatchHistory: View {
                 store.newChat()
                 didSelect()
             } label: {
-                Label("新建对话", systemImage: "square.and.pencil")
+                Text("新建对话")
                     .foregroundStyle(store.watchAccent)
+                    .padding(.horizontal, 8)
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                    .contentShape(Rectangle())
             }
+            .buttonStyle(.plain)
+            .listRowInsets(EdgeInsets())
+            .listRowBackground(Color.clear)
             if store.conversations.isEmpty {
                 Text("对话会保存在这里。")
                     .font(.footnote)
