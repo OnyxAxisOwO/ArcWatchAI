@@ -64,15 +64,19 @@ struct WatchChatView: View {
     }
 
     private var actionBar: some View {
-        HStack(spacing: 0) {
+        HStack(spacing: 6) {
             barButton("历史对话", symbol: "clock.arrow.circlepath") { panel = .history }
-            barButton("联网搜索", symbol: "globe", selected: store.searchEnabled) { store.searchEnabled.toggle() }
-            barButton("思考", symbol: "lightbulb", selected: store.thinkingEnabled) { store.thinkingEnabled.toggle() }
-            barButton("设置", symbol: "gearshape") { panel = .settings }
-        }
-        .padding(.horizontal, 3)
-        .background {
-            Color.clear.frame(height: 26).watchBarSurface()
+                .frame(width: 34)
+
+            HStack(spacing: 0) {
+                barButton("联网搜索", symbol: "globe", selected: store.searchEnabled) { store.searchEnabled.toggle() }
+                barButton("思考", symbol: "lightbulb", selected: store.thinkingEnabled) { store.thinkingEnabled.toggle() }
+                barButton("设置", symbol: "gearshape") { panel = .settings }
+            }
+            .padding(.horizontal, 3)
+            .background {
+                Color.clear.frame(height: 26).watchBarSurface()
+            }
         }
     }
 
